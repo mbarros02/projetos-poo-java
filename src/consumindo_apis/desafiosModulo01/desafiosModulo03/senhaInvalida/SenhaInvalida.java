@@ -1,4 +1,4 @@
-package consumindo_apis.desafiosModulo01.desafiosModulo03;
+package consumindo_apis.desafiosModulo01.desafiosModulo03.senhaInvalida;
 
 import java.util.Scanner;
 
