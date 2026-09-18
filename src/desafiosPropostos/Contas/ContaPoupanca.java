@@ -12,12 +12,12 @@ public class ContaPoupanca extends ContaBancaria {
     public void aplicarRendimetoOuTarifa() {
         this.rendimento = getSaldoConta() * 0.005;
         setSaldoConta(getSaldoConta() + this.rendimento);
-        super.rendSucesso = true;
+        notificarTodos("Rendimento aplicado no valor de: " + this.rendimento);
     }
 
     @Override
     public String toString() {
-        return
+        return  '\n' +
                 "----- Extrato de Conta -----" + '\n' +
                         "Conta Poupança" + '\n' +
                         super.toString() + '\n';

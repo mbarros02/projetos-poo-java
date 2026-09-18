@@ -11,12 +11,12 @@ public class ContaCorrente extends ContaBancaria{
     @Override
     public void aplicarRendimetoOuTarifa() {
         setSaldoConta(getSaldoConta() - this.taxa);
-        super.rendSucesso = true;
+        notificarTodos("Tarifa aplicado no valor de: " + taxa);
     }
 
     @Override
     public String toString() {
-        return
+        return  '\n' +
                 "----- Extrato de Conta -----" + '\n' +
                         "Conta Corrente" + '\n' +
                         super.toString() + '\n';

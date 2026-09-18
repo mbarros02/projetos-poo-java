@@ -8,13 +8,13 @@ public abstract class ContaBancaria {
     private String nomeTitular;
     private String numConta;
     private double saldoConta;
-    private boolean sacarSucesso, depositarSucesso;
-    public boolean rendSucesso;
+    private List<Notificar> canaisNotificacoes;
 
     public ContaBancaria(String nomeTitular, String numConta) {
         this.nomeTitular = nomeTitular;
         this.numConta = numConta;
         this.saldoConta = 0;
+        this.canaisNotificacoes = new ArrayList<>();
     }
 
     public String getNomeTitular() {
@@ -47,7 +47,7 @@ public abstract class ContaBancaria {
             System.out.println("Não permitido depositar valor negativo!!!");
         } else {
             this.saldoConta += valorDeposito;
-            this.depositarSucesso = true;
+            notificarTodos("Depósito no valor de: " +  valorDeposito);
         }
     }
 
@@ -56,21 +56,18 @@ public abstract class ContaBancaria {
             System.out.println("Não foi possível realizar o saque!!");
             System.out.println("Saldo insufuciente!");
         } else {
-            this.saldoConta += valorSaque;
-            this.sacarSucesso = true;
+            this.saldoConta -= valorSaque;
+            notificarTodos("Saque realizado no valor de: " +  valorSaque);
         }
     }
 
     public void adicionarNofificacao(Notificar canal) {
-        List<Notificar> notificacoes = new ArrayList<>();
+        canaisNotificacoes.add(canal);
+    }
 
-        notificacoes.add(canal);
-
-        if (sacarSucesso ||  depositarSucesso || rendSucesso) {
-
-            for(Notificar n: notificacoes) {
-                n.enviarNotificacao("Operação realizada com sucesso!");
-            }
+    protected void notificarTodos(String mensagem) {
+        for(Notificar canal : canaisNotificacoes) {
+            canal.enviarNotificacao(mensagem);
         }
     }
 
@@ -78,7 +75,7 @@ public abstract class ContaBancaria {
 
     @Override
     public String toString() {
-        return "Nome do Titular: " + nomeTitular + '\n' +
+        return  "Nome do Titular: " + nomeTitular + '\n' +
                 "Número da Conta: " + numConta + '\n' +
                 "Saldo da Conta: R$ " + String.format("%.2f", saldoConta);
     }
