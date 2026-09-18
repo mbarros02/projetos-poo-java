@@ -12,6 +12,7 @@ public class ContaPoupanca extends ContaBancaria {
     public void aplicarRendimetoOuTarifa() {
         this.rendimento = getSaldoConta() * 0.005;
         setSaldoConta(getSaldoConta() + this.rendimento);
+        super.rendSucesso = true;
     }
 
     @Override

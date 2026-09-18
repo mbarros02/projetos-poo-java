@@ -1,15 +1,21 @@
 package desafiosPropostos.Contas;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class ContaBancaria {
+
+    private String nomeTitular;
+    private String numConta;
+    private double saldoConta;
+    private boolean sacarSucesso, depositarSucesso;
+    public boolean rendSucesso;
+
     public ContaBancaria(String nomeTitular, String numConta) {
         this.nomeTitular = nomeTitular;
         this.numConta = numConta;
         this.saldoConta = 0;
     }
-
-    private String nomeTitular;
-    private String numConta;
-    private double saldoConta;
 
     public String getNomeTitular() {
         return nomeTitular;
@@ -41,6 +47,7 @@ public abstract class ContaBancaria {
             System.out.println("Não permitido depositar valor negativo!!!");
         } else {
             this.saldoConta += valorDeposito;
+            this.depositarSucesso = true;
         }
     }
 
@@ -50,6 +57,20 @@ public abstract class ContaBancaria {
             System.out.println("Saldo insufuciente!");
         } else {
             this.saldoConta += valorSaque;
+            this.sacarSucesso = true;
+        }
+    }
+
+    public void adicionarNofificacao(Notificar canal) {
+        List<Notificar> notificacoes = new ArrayList<>();
+
+        notificacoes.add(canal);
+
+        if (sacarSucesso ||  depositarSucesso || rendSucesso) {
+
+            for(Notificar n: notificacoes) {
+                n.enviarNotificacao("Operação realizada com sucesso!");
+            }
         }
     }
 
