@@ -5,7 +5,9 @@ import java.util.List;
 
 public class CriarContas {
     public static void main(String[] args) {
-        ContaBancaria cp = new ContaPoupanca("Marcello", "1234");
+        Endereco endereco = new Endereco("04943040", "Sao paulo", "rua");
+        Cliente c1 = new Cliente("Marcello", "44766884892",endereco);
+        ContaBancaria cp = new ContaPoupanca(c1, "1234");
         cp.adicionarNofificacao(new NotificacaoEmail());
         cp.adicionarNofificacao(new NotificarSms());
 

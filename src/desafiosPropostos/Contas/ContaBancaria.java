@@ -5,24 +5,24 @@ import java.util.List;
 
 public abstract class ContaBancaria {
 
-    private String nomeTitular;
+    private Cliente cliente;
     private String numConta;
     private double saldoConta;
     private List<Notificar> canaisNotificacoes;
 
-    public ContaBancaria(String nomeTitular, String numConta) {
-        this.nomeTitular = nomeTitular;
+    public ContaBancaria(Cliente cliente, String numConta) {
+        this.cliente = cliente;
         this.numConta = numConta;
         this.saldoConta = 0;
         this.canaisNotificacoes = new ArrayList<>();
     }
 
-    public String getNomeTitular() {
-        return nomeTitular;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    private void setNomeTitular(String nomeTitular) {
-        this.nomeTitular = nomeTitular;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public String getNumConta() {
@@ -75,7 +75,7 @@ public abstract class ContaBancaria {
 
     @Override
     public String toString() {
-        return  "Nome do Titular: " + nomeTitular + '\n' +
+        return  "" + cliente + '\n' +
                 "Número da Conta: " + numConta + '\n' +
                 "Saldo da Conta: R$ " + String.format("%.2f", saldoConta);
     }

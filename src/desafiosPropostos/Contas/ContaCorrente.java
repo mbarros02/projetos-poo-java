@@ -4,8 +4,8 @@ public class ContaCorrente extends ContaBancaria{
 
     private double taxa = 12.0;
 
-    public ContaCorrente(String nomeTitular, String numConta) {
-        super(nomeTitular, numConta);
+    public ContaCorrente(Cliente cliente, String numConta) {
+        super(cliente, numConta);
     }
 
     @Override

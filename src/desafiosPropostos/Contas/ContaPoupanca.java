@@ -4,8 +4,8 @@ public class ContaPoupanca extends ContaBancaria {
 
     private double rendimento;
 
-    public ContaPoupanca(String nomeTitular, String numConta) {
-        super(nomeTitular, numConta);
+    public ContaPoupanca(Cliente cliente, String numConta) {
+        super(cliente, numConta);
     }
 
     @Override
