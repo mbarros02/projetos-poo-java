@@ -1,4 +1,4 @@
-package desafiosPropostos.Contas;
+package desafiosPropostos.ContasComSubclasses;
 
 import java.util.ArrayList;
 import java.util.List;
