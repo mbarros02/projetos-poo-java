@@ -1,6 +1,6 @@
-package desafiosPropostos.ContasComSubclasses;
+package desafiosPropostos.ContasComSubclasses.notificacoes;
 
-public class NotificacaoEmail implements  Notificar {
+public class NotificacaoEmail implements Notificar {
 
     @Override
     public void enviarNotificacao(String mensagem) {

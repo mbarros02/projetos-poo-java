@@ -1,4 +1,7 @@
-package desafiosPropostos.ContasComSubclasses;
+package desafiosPropostos.ContasComSubclasses.contas;
+
+import desafiosPropostos.ContasComSubclasses.clientes.Cliente;
+import desafiosPropostos.ContasComSubclasses.notificacoes.Notificar;
 
 import java.util.ArrayList;
 import java.util.List;

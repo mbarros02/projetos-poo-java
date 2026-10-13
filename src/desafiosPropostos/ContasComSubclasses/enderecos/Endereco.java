@@ -1,4 +1,4 @@
-package desafiosPropostos.ContasComSubclasses;
+package desafiosPropostos.ContasComSubclasses.enderecos;
 
 public class Endereco {
 

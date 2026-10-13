@@ -1,4 +1,6 @@
-package desafiosPropostos.ContasComSubclasses;
+package desafiosPropostos.ContasComSubclasses.clientes;
+
+import desafiosPropostos.ContasComSubclasses.enderecos.Endereco;
 
 public class Cliente {
 

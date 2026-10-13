@@ -1,4 +1,4 @@
-package desafiosPropostos.ContasComSubclasses;
+package desafiosPropostos.ContasComSubclasses.notificacoes;
 
 public class NotificarSms implements Notificar {
     @Override

@@ -1,4 +1,6 @@
-package desafiosPropostos.ContasComSubclasses;
+package desafiosPropostos.ContasComSubclasses.contas;
+
+import desafiosPropostos.ContasComSubclasses.clientes.Cliente;
 
 public class ContaCorrente extends ContaBancaria{
 

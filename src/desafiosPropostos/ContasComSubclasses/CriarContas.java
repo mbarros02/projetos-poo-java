@@ -1,4 +1,11 @@
-package desafiosPropostos.Contas;
+package desafiosPropostos.ContasComSubclasses;
+
+import desafiosPropostos.ContasComSubclasses.clientes.Cliente;
+import desafiosPropostos.ContasComSubclasses.contas.ContaBancaria;
+import desafiosPropostos.ContasComSubclasses.contas.ContaPoupanca;
+import desafiosPropostos.ContasComSubclasses.enderecos.Endereco;
+import desafiosPropostos.ContasComSubclasses.notificacoes.NotificacaoEmail;
+import desafiosPropostos.ContasComSubclasses.notificacoes.NotificarSms;
 
 import java.util.ArrayList;
 import java.util.List;
